@@ -185,64 +185,39 @@ class InstitutionSolution {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Institution[] institutions =
-                new Institution[4];
+        Institution[] institutions = new Institution[4];
 
         for (int i = 0; i < 4; i++) {
-            int id =
-                    Integer.parseInt(sc.nextLine());
+            int id = Integer.parseInt(sc.nextLine());
 
-            String name =
-                    sc.nextLine();
+            String name = sc.nextLine();
 
-            int placed =
-                    Integer.parseInt(sc.nextLine());
+            int placed = Integer.parseInt(sc.nextLine());
 
-            int cleared =
-                    Integer.parseInt(sc.nextLine());
+            int cleared = Integer.parseInt(sc.nextLine());
 
-            String location =
-                    sc.nextLine();
+            String location = sc.nextLine();
 
-            institutions[i] =
-                    new Institution(
-                            id,
-                            name,
-                            placed,
-                            cleared,
-                            location);
+            institutions[i] = new Institution(id, name, placed, cleared, location);
         }
-        String location =
-                sc.nextLine();
+        String location = sc.nextLine();
 
-        String institutionName =
-                sc.nextLine();
+        String institutionName = sc.nextLine();
 
-        int result1 =
-                FindNumClearancedByLoc(
-                        institutions,
-                        location);
+        int result1 = FindNumClearancedByLoc(institutions, location);
 
         if (result1 > 0) {
             System.out.println(result1);
         } else {
-            System.out.println(
-                    "There are no cleared students in this particular location");
+            System.out.println("There are no cleared students in this particular location");
         }
 
-        Institution result2 =
-                UpdateInstitutionGrade(
-                        institutions,
-                        institutionName);
+        Institution result2 = UpdateInstitutionGrade(institutions, institutionName);
 
         if (result2 != null) {
-            System.out.println(
-                    result2.getInstitutionName()
-                            + "::"
-                            + result2.getGrade());
+            System.out.println(result2.getInstitutionName() + "::" + result2.getGrade());
         } else {
-            System.out.println(
-                    "No Institute is available with the specified name");
+            System.out.println("No Institute is available with the specified name");
         }
 
 
